@@ -1,7 +1,7 @@
 # Usage Examples
 
 ### **Example: Hugging Face Model (Not VLLM)**
--This example demonstrates how to load a Hugging Face model using `Yggdrasil` and perform inference.
+- This example demonstrates how to load a Hugging Face model using `Yggdrasil` and perform inference.
 ```python
 y = Yggdrasil("nlptown/bert-base-multilingual-uncased-sentiment",Feature_extractor=False,Image_processor=False,Config_Name="BertForNextSentencePrediction")
 y.load()
