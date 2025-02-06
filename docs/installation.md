@@ -1,30 +1,24 @@
 # Requirements & Installation
 
-Before getting started with our pipeline, make sure you have the necessary dependencies installed in your virtual environment.
+- We strongly recommend conda for virtual environment. Refer to the [Conda Installation guide](https://docs.conda.io/projects/conda/en/stable/user-guide/install/index.html)
+
+```bash
+conda create -n univlm python=3.1
+```
+Chnage <univlm> to any name of your choice.
 
 ## Installation
 
-Just use this command to install our pipeline: pip install univlm
+Follow the simple 2 step installtion process:
 
-You can install all required dependencies at once using:
-
+1. Using pip to install library.
 ```bash
-pip install -r requirements.txt
-
-Alternatively, install them manually:
-
-### Core Dependencies
-The following Python libraries are essential for running the pipeline:
-
-- `transformers` – for working with Hugging Face models  
-- `torch` – PyTorch, used for deep learning computations  
-- `vllm` – efficient model inference with VLLM  
-- `concurrent.futures` – for parallel processing  
-- `fuzzywuzzy` – for fuzzy string matching  
-- `subprocess` – for executing system commands  
-- `json` – handling JSON data  
-- `pathlib` – working with filesystem paths  
-- `diffusers` – for diffusion-based models  
+pip install univlm
+```
+2. One time backbone setup command.
+```bash
+univlm-install
+```
 
 ### Notes
 - Requires an internet connection for model downloads.
