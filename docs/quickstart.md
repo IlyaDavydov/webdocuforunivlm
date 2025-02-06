@@ -22,7 +22,7 @@ y.load()
 ```
 ### **Example of Image Only task**
 - This is an example of image only task with the use of "*facebook/sam-vit-base*"
-```
+```python
 img_url = "https://storage.googleapis.com/sfr-vision-language-research/BLIP/demo.jpg"
 image = Image.open(requests.get(img_url, stream=True).raw).convert('RGB')
 
@@ -32,3 +32,4 @@ y = Yggdrasil("facebook/sam-vit-base", Feature_extractor=False, Image_processor=
 y.load()
 output = y.inference(payload)
 print(output)
+```
