@@ -10,6 +10,8 @@ output = y.inference(payload)
 print(output)
 ```
 ### **Example of VLM**
+- This is an example of model supported on vLLM task with the use of "*Salesforce/blip-vqa-base*"
+```python
 img_url = 'https://storage.googleapis.com/sfr-vision-language-research/BLIP/demo.jpg' 
 raw_image = Image.open(requests.get(img_url, stream=True).raw).convert('RGB')
 listy = [raw_image,raw_image]
@@ -19,6 +21,7 @@ y = Yggdrasil("Salesforce/blip-vqa-base", Feature_extractor=False, Image_process
 y.load()
 ```
 ### **Example of Image Only task**
+- This is an example of image only task with the use of "*facebook/sam-vit-base*"
 ```
 img_url = "https://storage.googleapis.com/sfr-vision-language-research/BLIP/demo.jpg"
 image = Image.open(requests.get(img_url, stream=True).raw).convert('RGB')
