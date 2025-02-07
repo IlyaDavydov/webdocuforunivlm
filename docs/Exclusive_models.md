@@ -9,7 +9,7 @@
 ## Apple Depth Pro
 
 ### About
-Apple Depth Pro is a cutting-edge depth estimation model designed to leverage Apple’s hardware and software capabilities for high-precision depth mapping. It integrates seamlessly with Apple’s vision framework to provide real-time depth perception for various applications.
+[Apple Depth Pro](https://github.com/apple/ml-depth-pro) is a cutting-edge depth estimation model designed to leverage Apple’s hardware and software capabilities for high-precision depth mapping. It integrates seamlessly with Apple’s vision framework to provide real-time depth perception for various applications.
 
 ### Requirements
 ```
