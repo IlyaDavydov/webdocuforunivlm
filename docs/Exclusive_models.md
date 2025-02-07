@@ -74,16 +74,16 @@ zipp==3.21.0
 ```
 ### Setup
 1. Create a conda environment:
-   ```bash
+   ```sh
    conda create -n depth-pro -y python=3.9
    conda activate depth-pro
    ```
 2. Install dependencies:
-   ```bash
+   ```sh
    pip install -r requirements.txt
    ```
 3. Build and run the project:
-   ```bash
+   ```sh
    python main.py
    ```
 
