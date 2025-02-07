@@ -89,22 +89,11 @@ zipp==3.21.0
 
 ### Example Code
 ```python
-import cv2
-import numpy as np
-from univlm.Model import 
+from univlm.Model import unify
 
-# Load the model
-depth_model = AppleDepthPro()
-
-# Read an input image
-image = cv2.imread("input.jpg")
-
-# Estimate depth
-depth_map = depth_model.estimate_depth(image)
-
-# Display depth map
-cv2.imshow("Depth Map", depth_map)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+y= unify("AppledepthPro")
+y.load()
+image_path="input.jpg"
+output=y.inference(image_path)
 ```
 
