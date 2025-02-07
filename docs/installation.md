@@ -3,7 +3,7 @@
 - We strongly recommend Conda for virtual environments. Refer to the [Conda Installation Guide](https://docs.conda.io/projects/conda/en/stable/user-guide/install/index.html).
 
 ```bash
-conda create -n univlm python=3.1
+conda create -n univlm python=3.10
 ```
 Change "univlm" to any name of your choice.
 
