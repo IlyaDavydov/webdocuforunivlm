@@ -6,6 +6,7 @@ theme:
     - Home: docs/index.md
     - Requirements & Installation: docs/requirements.md
     - Quickstart: docs/quickstart.md
+    - Exclusive Models: docs/exclusive_models.md
     - Other thing: docs/other.md
     - About: docs/about.md
 
