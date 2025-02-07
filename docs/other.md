@@ -1,10 +1,10 @@
 # Core Modules
-### 1. `univlm` (Model Management)
+### 1. `unify` (Model Management)
 A versatile class that supports multiple model loading strategies and inference pipelines.
 
 #### **Initialization**
 ```python
-univlm(model_name, Feature_extractor, Image_processor, Config_Name=None)
+unify(model_name, Feature_extractor, Image_processor, Config_Name=None)
 ```
 - `model_name`: Name or path of the model
 - `Feature_extractor`: Optional feature extraction configuration
