@@ -5,7 +5,7 @@
 ```bash
 conda create -n univlm python=3.1
 ```
-Chnage <univlm> to any name of your choice.
+Chnage "univlm" to any name of your choice.
 
 ## Installation
 
