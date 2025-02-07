@@ -1,7 +1,7 @@
 # Usage Examples
 
 ### **Example: Hugging Face Model (Not VLLM)**
-- This example demonstrates how to load a Hugging Face model using `Yggdrasil` and perform inference.
+- This example demonstrates how to load a Hugging Face model using `univlm` and perform inference.
 ```python
 from univlm.Model import unify  
 
