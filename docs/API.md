@@ -17,18 +17,18 @@ Initialize Yggdrasil pipeline instance.
 
 ### Methods
 
-`load() -> str`
+#### `load() -> str`
 Attempt to load model using supported backends (VLLM → HuggingFace → Exclusive).
 
-Returns:  
-- `"Loaded"`
-- `"Failed to Load"`
+**Behavior**:
+- Tries VLLM backend first
+- Falls back to HuggingFace models
+- Attempts exclusive model loading as last resort
+- Prints loading diagnostics
 
-Behavior:
-- **Tries VLLM backend first**
-- **Falls back to HuggingFace models**
-- **Attempts exclusive model loading as last resort**
-- **Prints loading diagnostics**
+Return values:  
+- `"Loaded"` - successful initialization  
+- `"Failed to Load"` - all backends failed  
 
 #### `Proccessor() -> str`
 Load appropriate data processor for loaded model.
