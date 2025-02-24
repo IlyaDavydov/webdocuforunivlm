@@ -8,11 +8,12 @@ Core class for unified vision-language model management. Supports multiple model
 
 Initialize Yggdrasil pipeline instance.
 
-**Parameters**:
-- `model_name` (str): Identifier for model to load
-- `Feature_extractor` (bool): Whether to use feature extraction
-- `Image_processor` (bool): Whether to process images
-- `Config_Name` (str, optional): Specific configuration name for HuggingFace models
+| Parameter           | Type    | Description                              |
+|---------------------|---------|------------------------------------------|
+| `model_name`        | str     | Model identifier                         |
+| `Feature_extractor` | bool    | Enable feature extraction                |
+| `Image_processor`   | bool    | Enable image processing                  |
+| `Config_Name`       | str     | HF config name (optional)                | 
 
 ### Methods
 
