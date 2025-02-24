@@ -20,7 +20,7 @@ Initialize Yggdrasil pipeline instance.
 #### `load() -> str`
 Attempt to load model using supported backends (VLLM → HuggingFace → Exclusive).
 
-- Behavior:
+Behavior:
  - Tries VLLM backend first
  - Falls back to HuggingFace models
  - Attempts exclusive model loading as last resort
