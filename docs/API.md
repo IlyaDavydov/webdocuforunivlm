@@ -23,7 +23,7 @@ Attempt to load model using supported backends (VLLM → HuggingFace → Exclusi
 **Returns**:  
 `"Loaded"` or `"Failed to Load"`
 
-**Behavior**:
+### Behavior:
 - **Tries VLLM backend first**
 - **Falls back to HuggingFace models**
 - **Attempts exclusive model loading as last resort**
