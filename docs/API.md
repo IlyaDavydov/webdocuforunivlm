@@ -21,10 +21,10 @@ Initialize Yggdrasil pipeline instance.
 Attempt to load model using supported backends (VLLM → HuggingFace → Exclusive).
 
 Behavior:
-- #### Tries VLLM backend first
-- #### Falls back to HuggingFace models
-- #### Attempts exclusive model loading as last resort
-- #### Prints loading diagnostics
+- ### Tries VLLM backend first
+- ### Falls back to HuggingFace models
+- ### Attempts exclusive model loading as last resort
+- ### Prints loading diagnostics
 
 Return values:  
 - `"Loaded"` - successful initialization  
