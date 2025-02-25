@@ -27,30 +27,32 @@ Behavior:
 - Attempts exclusive model loading as last resort
 - Prints loading diagnostics
 
-Return values:  
+Returns:  
 - `"Loaded"` - successful initialization  
 - `"Failed to Load"` - all backends failed  
 
 #### `Proccessor() -> str`
 Load appropriate data processor for loaded model.
 
-**Returns**:
-- "Processor Loaded" on success
+Behavior:
 
-**Behavior**:
 - Auto-detects processor type based on model backend
 - Handles HuggingFace processors (tokenizers/image processors)
 - Skips processing for VLLM/Exclusive models
 
+Returns:
+- "Processor Loaded" on success
+
+
 #### `inference(payload: dict) -> Union[str, list]`
 Execute inference on input payload.
 
-**Parameters**:
+Parameters:
 - `payload` (dict): Input data with flexible keys:
   - Text keys: ["prompt", "text", "input_text", "inputs"]
   - Image keys: ["images", "image", "pixel_values", "visual_input"]
 
-**Returns**:
+Returns:
 - Single result (str) for single input
 - List of results for batch inputs
 
