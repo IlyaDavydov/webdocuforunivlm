@@ -151,11 +151,11 @@ input_names = model._get_processor_input_names(image_processor)
 
 **Behavior:**
 
-1. **Input Standardization:**
+**Input Standardization:**
    - Uses `_standardize_payload` to normalize input keys and detect batch mode.
    - Raises `ValueError` if no valid input keys are found.
 
-2. **Backend-Specific Handling:**
+**Backend-Specific Handling:**
    - **VLLM:**
      - Requires text input (`"text"`).
      - Uses `SamplingParams` with:
@@ -176,7 +176,7 @@ input_names = model._get_processor_input_names(image_processor)
      - Processes inputs sequentially.
      - Uses the model's custom `processor` and `infer` methods.
 
-3. **Output Formatting:**
+**Output Formatting:**
    - Returns a list for batch inputs.
    - Returns a single result for non-batch inputs.
 
