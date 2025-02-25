@@ -6,7 +6,7 @@ build:
     python: "3"
   jobs:
     pre_install:
-      pip install mkdocs-gitbook
+       - pip install mkdocs-gitbook
 
 mkdocs:
   configuration: mkdocs.yml
