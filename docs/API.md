@@ -4,7 +4,7 @@
 
 Core class for unified vision-language model management. Supports multiple model types (VLLM, HuggingFace, Exclusive).
 
-`__init__(model_name, Feature_extractor, Image_processor, Config_Name=None)`
+### `__init__(model_name, Feature_extractor, Image_processor, Config_Name=None)`
 
 Initialize Yggdrasil pipeline instance.
 
@@ -21,9 +21,11 @@ Initialize Yggdrasil pipeline instance.
 **Description:** Loads model using priority: VLLM → HF → Exclusive.
 
 **Returns:**
+
 - `str`: Loading status ("Loaded" or "Failed to Load")
 
 **Behavior:**
+
 1. Attempts VLLM loading with:
    - GPU memory utilization: 90%
    - Max sequence length: 2048
