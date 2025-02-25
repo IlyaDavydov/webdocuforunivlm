@@ -27,6 +27,7 @@ Initialize Yggdrasil pipeline instance.
 **Behavior:**
 
 - Attempts VLLM loading with:
+  
    - GPU memory utilization: 90%
    - Max sequence length: 2048
 - Falls back to HF via `HFModelSearcher`:
