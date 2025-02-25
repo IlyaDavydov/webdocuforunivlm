@@ -6,7 +6,7 @@ build:
     python: "3"
   jobs:
     pre_install:
-      - pip install mkdocs-dracula-theme
+      - pip install mkdocs-simple-blog
 
 mkdocs:
   configuration: mkdocs.yml
