@@ -26,9 +26,9 @@ Initialize Yggdrasil pipeline instance.
 
 **Behavior:**
 
-1. Attempts VLLM loading with GPU memory utilization: 90%, Max sequence length: 2048
-2. Falls back to HF via `HFModelSearcher`: Handles config selection via CLI when ambiguous, uses `reference_table` for model class mapping
-3. For Exclusive models: Calls `env_setup()` and `load_model()`
+- Attempts VLLM loading with GPU memory utilization: 90%, Max sequence length: 2048
+- Falls back to HF via `HFModelSearcher`: Handles config selection via CLI when ambiguous, uses `reference_table` for model class mapping
+- For Exclusive models: Calls `env_setup()` and `load_model()`
   
 **Example:**
 
@@ -115,10 +115,10 @@ standardized, is_batch = model._standardize_payload(payload)
 
 - Inspects the processor's class name to determine its type.
 - Returns appropriate parameter names based on the processor's capabilities:
-  - **Multi-modal processors**: Use `"text"` for text and `"images"` for images.
-  - **Tokenizers**: Only handle text (`"text"`), with `"image"` set to `None`.
-  - **Image processors/feature extractors**: Only handle images (`"pixel_values"`), with `"text"` set to `None`.
-  - **Default fallback**: Uses `"text"` and `"pixel_values"` for unknown processor types.
+  - Multi-modal processors: Use `"text"` for text and `"images"` for images.
+  - Tokenizers: Only handle text (`"text"`), with `"image"` set to `None`.
+  - Image processors/feature extractors**: Only handle images (`"pixel_values"`), with `"text"` set to `None`.
+  - Default fallback: Uses `"text"` and `"pixel_values"` for unknown processor types.
 
 **Example:**
 ```python
@@ -189,13 +189,14 @@ input_names = model._get_processor_input_names(image_processor)
 
 **Examples:**
 
-1. **VLLM Backend:**
+**1. VLLM Backend:**
 ```python
 payload = {"prompt": "Explain quantum physics"}
 result = model.inference(payload)
 # Returns: "Quantum physics is the study of..."
 ```
-2. **HF Backend (Batch Input):**
+
+**2. HF Backend (Batch Input):**
 ```python
 payload = {
     "text": ["What is AI?", "What is ML?"],
@@ -205,7 +206,7 @@ results = model.inference(payload)
 # Returns: ["AI is...", "ML is..."]
 ```
 
-3. **Exclusive Backend:**
+**3. Exclusive Backend:**
 ```python
 payload = {"input_text": "Estimate the depth of image", "image": "example.jpg"}
 result = model.inference(payload)
