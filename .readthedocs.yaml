@@ -6,7 +6,7 @@ build:
     python: "3"
   jobs:
     pre_install:
-      - pip install mkdocs-simple-blog
+      - pip install mkdocs-bootstrap
 
 mkdocs:
   configuration: mkdocs.yml
