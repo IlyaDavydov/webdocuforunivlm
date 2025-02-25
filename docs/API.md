@@ -36,6 +36,7 @@ Initialize Yggdrasil pipeline instance.
    - Calls `env_setup()` and `load_model()`
   
 **Example:**
+
 ```python
 model = Yggdrasil("gpt2", feature_extractor, image_processor)
 status = model.load()
