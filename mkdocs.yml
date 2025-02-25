@@ -1,7 +1,7 @@
 site_name: A unified Vision-Language Model (VLM) Pipeline documentation
 site_url: https://username.github.io/univlm
 theme:
-  name: gitbook
+  name: windmill
   navigation:
    - Home: docs/index.md
    - Requirements & Installation: docs/requirements.md
