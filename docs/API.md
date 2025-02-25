@@ -95,7 +95,7 @@ standardized, is_batch = model._standardize_payload(payload)
 # Returns: ({"pixel_values": [img1, img2]}, True)
 ```
 
-## `_get_processor_input_names(processor)`
+#### `_get_processor_input_names(processor)`
 
 | Parameter           | Type    | Description                              |
 |---------------------|---------|------------------------------------------|
@@ -133,7 +133,7 @@ input_names = model._get_processor_input_names(image_processor)
 # Returns: {"text": None, "image": "pixel_values"}
 ```
 
-## `inference(payload)`
+#### `inference(payload)`
 
 | Parameter           | Type    | Description                              |
 |---------------------|---------|------------------------------------------|
