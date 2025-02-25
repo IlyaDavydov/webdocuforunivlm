@@ -152,10 +152,12 @@ input_names = model._get_processor_input_names(image_processor)
 **Behavior:**
 
 **Input Standardization:**
+
    - Uses `_standardize_payload` to normalize input keys and detect batch mode.
    - Raises `ValueError` if no valid input keys are found.
 
 **Backend-Specific Handling:**
+
    - **VLLM:**
      - Requires text input (`"text"`).
      - Uses `SamplingParams` with:
@@ -192,16 +194,19 @@ input_names = model._get_processor_input_names(image_processor)
 payload = {"prompt": "Explain quantum physics"}
 result = model.inference(payload)
 # Returns: "Quantum physics is the study of..."
-
+```
 2. **HF Backend (Batch Input):**
+```python
 payload = {
     "text": ["What is AI?", "What is ML?"],
     "images": [img1, img2]
 }
 results = model.inference(payload)
 # Returns: ["AI is...", "ML is..."]
+```
 
 3. **Exclusive Backend:**
+```python
 payload = {"input_text": "Estimate the depth of image", "image": "example.jpg"}
 result = model.inference(payload)
 # Returns: Estimated depth
