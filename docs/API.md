@@ -35,6 +35,7 @@ Initialize Yggdrasil pipeline instance.
 ```python
 model = Yggdrasil("gpt2", feature_extractor, image_processor)
 status = model.load()
+```
 
 #### `Proccessor() -> str`
 **Description:** Determines the appropriate processor (Tokenizer or Processor) for the model
@@ -83,6 +84,7 @@ standardized, is_batch = model._standardize_payload(payload)
 payload = {"images": [img1, img2]}
 standardized, is_batch = model._standardize_payload(payload)
 # Returns: ({"pixel_values": [img1, img2]}, True)
+```
 
 ## `_get_processor_input_names(processor)`
 **Description:** Determines the correct input parameter names for different processor types.
@@ -112,6 +114,7 @@ input_names = model._get_processor_input_names(tokenizer)
 image_processor = ImageProcessor()
 input_names = model._get_processor_input_names(image_processor)
 # Returns: {"text": None, "image": "pixel_values"}
+```
 
 ## `inference(payload)`
 **Description:** Performs inference on single or batch inputs using the loaded model.
@@ -176,3 +179,4 @@ results = model.inference(payload)
 payload = {"input_text": "Estimate the depth of image", "image": "example.jpg"}
 result = model.inference(payload)
 # Returns: Estimated depth
+```
