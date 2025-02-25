@@ -30,11 +30,13 @@ Initialize Yggdrasil pipeline instance.
    
    - GPU memory utilization: 90%
    - Max sequence length: 2048
-3. Falls back to HF via `HFModelSearcher`:
+     
+2. Falls back to HF via `HFModelSearcher`:
    
    - Handles config selection via CLI when ambiguous
    - Uses `reference_table` for model class mapping
-5. For Exclusive models:
+     
+3. For Exclusive models:
    
    - Calls `env_setup()` and `load_model()`
   
