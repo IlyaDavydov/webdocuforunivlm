@@ -44,25 +44,34 @@ status = model.load()
 |---------------------|---------|------------------------------------------|
 | `model_name`        | str     | Name of the model to process             |
 
-Returns:
+**Returns**:
+
 - Type of processor selected ('Processor' or 'Tokenizer')
 
-Raises:
+**Raises**:
+
 - ValueError: If model not loaded
 
-Behavior:
+**Behavior**:
 
 - For HF: Uses HFProcessorSearcher
 - Skips for VLLM/Exclusive models
 - Requires prior model loading
 
 #### `_standardize_payload(self, payload) -> tuple[dict, bool]`
+
+| Parameter           | Type    | Description                              |
+|---------------------|---------|------------------------------------------|
+| `payload`           | dict    | Raw data with potential aliases for keys |
+
 **Description:** Standardizes input payload keys for compatibility with both VLLM and HF backends. Handles both single inputs and batches.
 
 **Parameters:**
+
 - `payload` (dict): Raw input data with potential aliases for keys.
 
 **Returns:**
+
 - `tuple[dict, bool]`: A tuple containing:
   - `standardized` (dict): Normalized payload with keys `"text"` and optionally `"pixel_values"`. Values are always lists.
   - `is_batch` (bool): `True` if the input is a batch (multiple items), `False` for single inputs.
@@ -87,15 +96,23 @@ standardized, is_batch = model._standardize_payload(payload)
 ```
 
 ## `_get_processor_input_names(processor)`
+
+| Parameter           | Type    | Description                              |
+|---------------------|---------|------------------------------------------|
+| `processor`         | dict    | The processor object (e.g., tokenizer)   |
+
 **Description:** Determines the correct input parameter names for different processor types.
 
 **Parameters:**
+
 - `processor` (Any): The processor object (e.g., tokenizer, image processor).
 
 **Returns:**
+
 - `dict[str, Optional[str]]`: A dictionary mapping input types (`"text"` and `"image"`) to their corresponding parameter names. If a processor does not support a specific input type, the value will be `None`.
 
 **Behavior:**
+
 - Inspects the processor's class name to determine its type.
 - Returns appropriate parameter names based on the processor's capabilities:
   - **Multi-modal processors**: Use `"text"` for text and `"images"` for images.
@@ -117,15 +134,23 @@ input_names = model._get_processor_input_names(image_processor)
 ```
 
 ## `inference(payload)`
+
+| Parameter           | Type    | Description                              |
+|---------------------|---------|------------------------------------------|
+| `payload`           | dict    | Input data containing text, images       |
+
 **Description:** Performs inference on single or batch inputs using the loaded model.
 
 **Parameters:**
+
 - `payload` (dict): Input data containing text, images, or both. Supports batch inputs.
 
 **Returns:**
+
 - `Union[list, Any]`: Inference results. Returns a list for batch inputs or a single result for non-batch inputs.
 
 **Behavior:**
+
 1. **Input Standardization:**
    - Uses `_standardize_payload` to normalize input keys and detect batch mode.
    - Raises `ValueError` if no valid input keys are found.
@@ -156,6 +181,7 @@ input_names = model._get_processor_input_names(image_processor)
    - Returns a single result for non-batch inputs.
 
 **Raises:**
+
 - `ValueError`: If no valid input keys are found or if the processor is not loaded (for HF).
 - `Exception`: Propagates backend-specific errors during inference.
 
