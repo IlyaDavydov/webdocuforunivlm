@@ -26,15 +26,9 @@ Initialize Yggdrasil pipeline instance.
 
 **Behavior:**
 
-- Attempts VLLM loading with:
-  
-   - GPU memory utilization: 90%
-   - Max sequence length: 2048
-- Falls back to HF via `HFModelSearcher`:
-   - Handles config selection via CLI when ambiguous
-   - Uses `reference_table` for model class mapping
-- For Exclusive models:
-   - Calls `env_setup()` and `load_model()`
+1. Attempts VLLM loading with GPU memory utilization: 90%, Max sequence length: 2048
+2. Falls back to HF via `HFModelSearcher`: Handles config selection via CLI when ambiguous, uses `reference_table` for model class mapping
+3. For Exclusive models: Calls `env_setup()` and `load_model()`
   
 **Example:**
 
