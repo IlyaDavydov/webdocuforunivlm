@@ -2,10 +2,10 @@ site_name: A unified Vision-Language Model (VLM) Pipeline documentation
 site_url: https://username.github.io/univlm
 theme:
   name: gitbook
-  navigation:
-    - Home: docs/index.md
-    - Requirements & Installation: docs/requirements.md
-    - Quickstart: docs/quickstart.md
-    - Exclusive Models: docs/Exclusive_models.md
-    - Other thing: docs/other.md
-    - About: docs/about.md
+navigation:
+  - Home: docs/index.md
+  - Requirements & Installation: docs/requirements.md
+  - Quickstart: docs/quickstart.md
+  - Exclusive Models: docs/Exclusive_models.md
+  - Other thing: docs/other.md
+  - About: docs/about.md
