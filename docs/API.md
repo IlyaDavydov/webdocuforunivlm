@@ -6,7 +6,7 @@ Core class for unified vision-language model management. Supports multiple model
 
 ### `__init__(model_name, Feature_extractor, Image_processor, Config_Name=None)`
 
-Initialize Unify pipeline instance.
+Initialize unify pipeline instance.
 
 | Parameter           | Type    | Description                              |
 |---------------------|---------|------------------------------------------|
@@ -33,7 +33,7 @@ Initialize Unify pipeline instance.
 **Example:**
 
 ```python
-model = Unify("gpt2", feature_extractor, image_processor)
+model = unify("gpt2", feature_extractor, image_processor)
 status = model.load()
 ```
 
