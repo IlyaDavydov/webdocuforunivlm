@@ -1,12 +1,12 @@
 # Univlm API Reference
 
-## Yggdrasil Class
+## Unify Class
 
 Core class for unified vision-language model management. Supports multiple model types (VLLM, HuggingFace, Exclusive).
 
 ### `__init__(model_name, Feature_extractor, Image_processor, Config_Name=None)`
 
-Initialize Yggdrasil pipeline instance.
+Initialize Unify pipeline instance.
 
 | Parameter           | Type    | Description                              |
 |---------------------|---------|------------------------------------------|
@@ -33,7 +33,7 @@ Initialize Yggdrasil pipeline instance.
 **Example:**
 
 ```python
-model = Yggdrasil("gpt2", feature_extractor, image_processor)
+model = Unify("gpt2", feature_extractor, image_processor)
 status = model.load()
 ```
 
