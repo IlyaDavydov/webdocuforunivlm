@@ -3,11 +3,13 @@
 ### **Example: Hugging Face Model (Not VLLM)**
 - This example demonstrates how to load a Hugging Face model using `univlm` and perform inference.
 ```python
-from univlm.Model import unify  
+from univlm.Model import unify
 
-y = unify("nlptown/bert-base-multilingual-uncased-sentiment",Config_Name = 'BertForNextSentencePrediction') # also try not providing Config_Name in cli
+y = unify("nlptown/bert-base-multilingual-uncased-sentiment", Config_Name="BertForNextSentencePrediction")
+
 y.load()
-payload = { "text": "Hello, how are you?", "pixel_values": None }
+payload = {"text": "Hello, how are you?", "pixel_values": None}
+y.Proccessor()
 output = y.inference(payload)
 print(output)
 ```
@@ -32,23 +34,21 @@ print(output)
 ### **Example of Image Only task**
 - This is an example of image only task with the use of "*facebook/sam-vit-base*"
 ```python
-from univlm.Model import unify  
-from PIL import Image
-import requests
-
+from univlm.Model import unify
 img_url = "https://storage.googleapis.com/sfr-vision-language-research/BLIP/demo.jpg"
 image = Image.open(requests.get(img_url, stream=True).raw).convert('RGB')
-
 payload = {"pixel_values": image, "text": None}
 
-y = unify("facebook/sam-vit-base")
+y = unify("facebook/sam-vit-base", Image_processor=True)
 y.load()
+y.Proccessor()
 output = y.inference(payload)
 print(output)
 ```
 ### **VLLM example**
 - This is an example of the use of "*facebook/opt-125m*"
 ```python
+from univlm.Model import unify
 prompts = ["Hello, my name is", "what is the capital of United States"]
 y = unify("facebook/opt-125m")
 y.load()
@@ -63,29 +63,29 @@ from univlm.Model import unify
 from PIL import Image
 import requests
 
-url = "http://images.cocodataset.org/val2017/000000039769.jpg"
-image = Image.open(requests.get(url, stream=True).raw)
-
-payload = {"pixel_values": image, "text": None}
-
-y = unify("LiheYoung/depth-anything-large-hf")
+y = unify("AppledepthPro")
 y.load()
-output = y.inference(payload)
-print(output)
+y.Proccessor()
+image_path = "input.jpg"
+output = y.inference(image_path)
+print("Depth map generated:", output)
+
 ```
 ### **Object detection example**
 ```python
-from univlm.Model import unify  
+from univlm.Model import unify
 from PIL import Image
 import requests
 
-img_url = "https://storage.googleapis.com/sfr-vision-language-research/BLIP/demo.jpg"
-image = Image.open(requests.get(img_url, stream=True).raw).convert('RGB')
+img_url = 'https://storage.googleapis.com/sfr-vision-language-research/BLIP/demo.jpg'
+raw_image = Image.open(requests.get(img_url, stream=True).raw).convert('RGB')
 
-payload = {"pixel_values": image, "text": None}
+listy = [raw_image, raw_image]
+payload = {"pixel_values": listy, "text": ["how many dogs?", "color of dog"]}
 
-y = unify("hustvl/yolos-tiny")
+y = unify("Salesforce/blip-vqa-base")
 y.load()
+y.Proccessor()
 output = y.inference(payload)
 print(output)
 ```
