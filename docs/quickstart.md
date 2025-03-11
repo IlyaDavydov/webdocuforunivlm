@@ -27,6 +27,7 @@ payload = {"pixel_values": listy, "text": ["how many dogs?","color of dog"]}
 
 y = unify("Salesforce/blip-vqa-base")
 y.load()
+y.Proccessor()
 output = y.inference(payload)
 
 print(output)
