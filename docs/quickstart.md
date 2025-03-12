@@ -34,11 +34,12 @@ print(output)
 - This is an example of image only task with the use of "*facebook/sam-vit-base*"
 ```python
 from univlm.Model import unify
+
+# Image Segmentation with SAM (Vision Model)
 img_url = "https://storage.googleapis.com/sfr-vision-language-research/BLIP/demo.jpg"
 image = Image.open(requests.get(img_url, stream=True).raw).convert('RGB')
 payload = {"pixel_values": image, "text": None}
-
-y = unify("facebook/sam-vit-base", Image_processor=True)
+y = unify("facebook/sam-vit-base", Image_processor=True, Config_Name= 'SamModel')
 y.load()
 y.Proccessor()
 output = y.inference(payload)
