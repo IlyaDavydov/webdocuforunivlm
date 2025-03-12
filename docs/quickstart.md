@@ -34,6 +34,8 @@ print(output)
 - This is an example of image only task with the use of "*facebook/sam-vit-base*"
 ```python
 from univlm.Model import unify
+from PIL import Image
+import requests
 
 # Image Segmentation with SAM (Vision Model)
 img_url = "https://storage.googleapis.com/sfr-vision-language-research/BLIP/demo.jpg"
