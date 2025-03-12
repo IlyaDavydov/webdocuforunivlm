@@ -59,7 +59,7 @@ output = y.inference(payload)
 print(output)
 ```
 ### **Depth Estimation**
-- This is an example of Depth Estimation with the use of "*depth-anything-large*"
+- This is an example of Depth Estimation with the use of "*AppledepthPro*"
 ```python
 from univlm.Model import unify  
 from PIL import Image
@@ -72,23 +72,5 @@ image_path = "input.jpg"
 output = y.inference(image_path)
 print("Depth map generated:", output)
 
-```
-### **Object detection example**
-```python
-from univlm.Model import unify
-from PIL import Image
-import requests
 
-img_url = 'https://storage.googleapis.com/sfr-vision-language-research/BLIP/demo.jpg'
-raw_image = Image.open(requests.get(img_url, stream=True).raw).convert('RGB')
-
-listy = [raw_image, raw_image]
-payload = {"pixel_values": listy, "text": ["how many dogs?", "color of dog"]}
-
-y = unify("Salesforce/blip-vqa-base")
-y.load()
-y.Proccessor()
-output = y.inference(payload)
-print(output)
-```
 
