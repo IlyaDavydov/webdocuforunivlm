@@ -71,6 +71,8 @@ y.Proccessor()
 image_path = "input.jpg"
 output = y.inference(image_path)
 print("Depth map generated:", output)
+```
+
 
 
 
