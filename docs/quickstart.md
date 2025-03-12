@@ -72,6 +72,16 @@ image_path = "input.jpg"
 output = y.inference(image_path)
 print("Depth map generated:", output)
 ```
+*Note:* In order to run appledepth timm,pillow and matplotlib are needed.
+```bash
+pip install timm
+```
+```bash
+pip install matplotlib
+```
+```bash
+pip install pillow-heif
+```
 
 
 
