@@ -20,16 +20,14 @@ from univlm.Model import unify
 from PIL import Image
 import requests
 
-img_url = 'https://storage.googleapis.com/sfr-vision-language-research/BLIP/demo.jpg' 
+img_url = 'https://storage.googleapis.com/sfr-vision-language-research/BLIP/demo.jpg'
 raw_image = Image.open(requests.get(img_url, stream=True).raw).convert('RGB')
-listy = [raw_image,raw_image]
-payload = {"pixel_values": listy, "text": ["how many dogs?","color of dog"]}
-
-y = unify("Salesforce/blip-vqa-base")
+listy = [raw_image, raw_image]
+payload = {"pixel_values": listy, "text": ["how many dogs?", "color of dog"]}
+y = unify("Salesforce/blip-vqa-base", Config_Name='BlipForQuestionAnswering')
 y.load()
 y.Proccessor()
 output = y.inference(payload)
-
 print(output)
 ```
 ### **Example of Image Only task**
